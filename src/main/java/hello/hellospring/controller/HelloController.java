@@ -17,7 +17,7 @@ public class HelloController {
     }
 
     @GetMapping("hello-mvc")
-    public String helMvc(@RequestParam("name") String name, Model model){
+    public String helloMvc(@RequestParam("name") String name, Model model){
         model.addAttribute("name", name);
         return "hello-template";
     }
@@ -29,7 +29,7 @@ public class HelloController {
     }
 
     @GetMapping("hello-api")
-    @ResponseBody //정적 파일 찾지 말고 그대로 보여주라는 의미
+    @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
         hello.setName(name);
